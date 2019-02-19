@@ -1,2 +1,2 @@
 # react-typescript
-typescript react
+  typescript react

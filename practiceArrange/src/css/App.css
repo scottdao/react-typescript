@@ -1,0 +1,182 @@
+@import url("iconFont/iconfont.css");
+ul,
+li,
+dl,
+dt,
+dd,
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+label,
+table,
+tr,
+td,
+p,
+header,
+article,
+footer,
+nav,
+section,
+aside,
+menu,
+body,
+html{
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	border: none;
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	color: #be8185;
+	text-decoration: none;
+	outline: none;
+}
+
+body {
+	font-size:1rem;
+	color: #666;
+	font-family: "microsoft yahei";
+	min-width: 320px;
+
+}
+
+html,
+body {
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+
+input,
+textarea,
+button,
+select {
+	outline: none;
+	font-family: microsoft yahei;
+	border: 0;
+	font-size: 1rem;
+	color: #666;
+	background-color: transparent;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	-webkit-appearance: bottom;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"] {
+	-webkit-appearance: none;
+	-webkit-appearance: checkbox
+}
+
+::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #999;
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #999;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #999;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #999;
+	letter-spacing: 1px;
+	font-size: 1rem;
+}
+
+.clearFix {
+	zoom: 1;
+}
+
+.clearFix:after {
+	content: " ";
+	display: block;
+	overflow: hidden;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+
+
+@media only screen and (min-width: 375px) and (max-width:413px) {
+	html {
+		font-size: 14px;
+	}
+}
+@media only screen and (min-width: 320px) and (max-width:374px) {
+	html {
+		font-size: 12px;
+	}
+	
+}
+
+/* 平板电脑布局:414px 至480px。样式继承自: 移动设备布局。 */
+
+@media only screen and (min-width: 414px) and (max-width:479px) {
+	html {
+		font-size: 16px;
+	}
+	
+}
+
+
+/* 桌面电脑布局: 481px 至最高 1232px。样式继承自: 移动设备布局和平板电脑布局。 */
+
+@media only screen and (min-width: 480px) {
+	html {
+		font-size: 18px;
+	}
+
+}
+
+@media screen and (min-width:1025px) {
+	body {
+		width: 640px;
+		margin: auto;
+	}
+	html{
+		font-size: 38px;
+	}
+	
+}
