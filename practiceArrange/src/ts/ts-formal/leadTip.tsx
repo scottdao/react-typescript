@@ -22,10 +22,11 @@ class LeadTip extends React.Component<{},{}> {
 					<li>抄好12个助记词并秘密保管</li>
 				</ul>
 			</div>
+			
 			<Link to='./setPassword'>
-			<footer className='tip-confirm'>
-				<div>确定</div>
-			</footer>
+				<footer className='tip-confirm'>
+					<div>确定</div>
+				</footer>
 			</Link>
 		</div>
 	 )

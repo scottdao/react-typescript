@@ -1,15 +1,22 @@
 import { observable, action } from 'mobx';
-
+import {
+	Frame,
+	FrameActions,
+	//Flag
+	} from './frame-tip'
 // 定义数据结构
-class Store {
+class Store extends Frame{
   // ① 使用 observable decorator 
   @observable a:number = 0;
+	 
 }
-// 定义对数据的操作
-class Actions {
+
+//定义对数据的操作
+class Actions extends FrameActions{
   public store:any;
   constructor({store}) {
-    this.store = store;
+		super(store);
+		this.store = store;
   }
   // ② 使用 action decorator 
   @action

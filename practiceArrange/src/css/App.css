@@ -35,6 +35,7 @@ body,
 html{
 	margin: 0;
 	padding: 0;
+	
 }
 
 table {
@@ -67,6 +68,7 @@ html,
 body {
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
+	overflow: hidden;
 }
 
 input,
@@ -91,11 +93,13 @@ input[type="reset"] {
 
 input[type="button"],
 input[type="checkbox"],
-input[type="radio"] {
+input[type="radio"]{
 	-webkit-appearance: none;
 	-webkit-appearance: checkbox
 }
-
+input[type="text"],input[type="password"] {
+	-webkit-appearance: none;
+}
 ::-webkit-input-placeholder {
 	/* WebKit browsers */
 	color: #999;

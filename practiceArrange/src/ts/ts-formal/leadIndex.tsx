@@ -17,6 +17,7 @@ class Login extends React.Component<IProps,{}> {
   public state = {
 		count:1
 	};
+
   public componentDidMount(){
 		document.title = '冷钱包-首页';
   }

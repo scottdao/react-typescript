@@ -1,7 +1,7 @@
 .restore-account{
 	font-size: calc(12rem/14);
 	color: rgb(255, 193, 7);
-	text-align: right;padding: 1% 1% 2% 0;
+	text-align: right;padding: 2% 2% 2% 0;
 }
 .tip-remark span{
 	font-size: calc(50rem/14);
@@ -24,6 +24,13 @@
 	margin: calc(20rem/14) 0 0 0;
 	color:  rgba(2,132,209,0.8);
 }
+/* .tip-confirm{
+	position: absolute;
+	bottom: calc(212rem/14);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+} */
 .tip-confirm>div{
 	height: calc(40rem/14);
 	width: calc(160rem/14);
@@ -33,4 +40,5 @@
 	text-align: center;
 	line-height: calc(40rem/14);
 	margin: 6% auto;
+	
 }
