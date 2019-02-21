@@ -3,7 +3,7 @@ import Router from './router';
 import {
   HashRouter,
 } from 'react-router-dom'
-import {actions, store} from './ts/mobx/store/store';
+import {actions, store} from './ts/mobx/store';
 
 import { Provider } from 'mobx-react';
 

@@ -14,12 +14,16 @@
 	margin: calc(40rem/14/2) auto 0;
 	text-indent: calc(25rem/14);
 }
+.backups-total{
+	height: 100%;
+	overflow: scroll;
+}
 .reword-words{
 	width: calc(100% - 68px);
 	height: calc(310rem/2/14);
 	background-color: rgb(246,246,246);
 	border-radius: calc(8rem/14);
-	margin: calc(120rem/2/14) auto ;
+	margin: calc(120rem/2/14) auto 0;
 }
 .reword-btn{
 	width: 13.125rem;
@@ -29,7 +33,35 @@
 	color: #FFFFFF;
 	text-align: center;
 	line-height: 3.125rem;
+	margin: calc(120rem/2/14) auto 0;
+}
+div.confirm-btn{
+	margin: calc(20rem/2/14) auto 0;
+}
+.chance-words-list{
+	width: calc(100% - 68px);
+	height: calc(310rem/2/14);
+	/* background-color: rgb(246,246,246); */
+	border-radius: calc(8rem/14);
 	margin: 0 auto;
+}
+
+.words-sort{
+	
+}
+.words-sort li{
+	font-size: calc(1rem);
+	font-family: "microsoft yahei";
+	display: inline-block;
+	margin:  calc(20rem/2/14) 8%;
+	width: calc(50rem/14);
+	text-align: center;
+}
+.listActive{
+	background: orange;
+	color: #FFFFFF;
+	border-radius: calc(2rem/14);
+	
 }
 
 /* 弹框 */
