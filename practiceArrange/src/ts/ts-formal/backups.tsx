@@ -18,14 +18,14 @@ interface IState {
 class Backups extends React.Component<IProps,IState> {
 	public state={
 		hlepList:[],
-		playList:['egg', 'egg', 'egg', 'egg','egg', 'egg', 'egg', 'egg','egg', 'egg', 'egg', 'egg'],
-		activeIndexArr:[]
+		playList:['eggA', 'eggB', 'eggC', 'eggD','eggE', 'eggF', 'eggG', 'eggH','eggJ', 'eggK', 'eggL', 'eggM'],
+		activeIndexArr:{}
 	}
   public componentDidMount(){
  	document.title = '冷钱包-备份助记词';
 	this.props.actions.firstFrame();
 	this.props.actions.noClickNext();
-	
+	//权限控制，登录确认账号，无法后退；
  }
  public componentWillUnmount(){
  	document.title = '';
@@ -40,9 +40,7 @@ class Backups extends React.Component<IProps,IState> {
 			helpWordFlag:helpWordFlag
 		}
 		} = this.props;
-		const {hlepList, playList, activeIndexArr} = this.state
-		console.log(this.props);
-		console.log(this.state);
+		let {hlepList, playList, activeIndexArr} = this.state
 	 return(
 		<div className="backups-total">
 			<div className='restore-account'>恢复账号</div>
@@ -63,11 +61,21 @@ class Backups extends React.Component<IProps,IState> {
 					<ul className='words-sort'>
 						{
 							hlepList && hlepList.map((res,index)=>{
-								return(<li key={index} onClick={()=>{
-									activeIndexArr.push(index)
+								return(<li key={index} onClick={(e)=>{
+										if(activeIndexArr[index]===index){delete activeIndexArr[index];}
+										else activeIndexArr[index]=index
+										hlepList.filter((r, i)=>{
+											if(playList.length<12){
+												   activeIndexArr[index] === i?playList.push(r):"";
+											}
+										})
+										//按index无法有效删除，操作的顺序会变化，需通过值来删除。
+										playList.map((e,n)=>{
+											if(activeIndexArr[index]===undefined)if(res===e)playList.splice(n,1);
+										});
 									this.setState({
-										
-										activeIndexArr
+										activeIndexArr,
+										playList
 									})
 								}} className={activeIndexArr[index]===index?"listActive":""}>{res}</li>)
 							})
@@ -76,12 +84,17 @@ class Backups extends React.Component<IProps,IState> {
 				</div>):""}
 				
 				<div className={helpWordFlag?"reword-btn ":'reword-btn confirm-btn'} onClick={()=>{
-					this.setState({
-						hlepList:['egg', 'egg', 'egg', 'egg','egg', 'egg', 'egg', 'egg','egg', 'egg', 'egg', 'egg'],
+					if(helpWordFlag){
+						this.setState({
+						hlepList:['eggA', 'eggB', 'eggC', 'eggD','eggE', 'eggF', 'eggG', 'eggH','eggJ', 'eggK', 'eggL', 'eggM'],
 						playList:[]
 					})
 					clickNext();
-				}}>{helpWordFlag?"下一步":"确认"}</div>
+					
+					}else{//进入一下页
+						playList.length===12?this.props.history.push('/main'):'';
+					}
+				}} style={{backgroundColor:playList.length===12?"rgba(18,169,237,1)":""}}>{helpWordFlag?"下一步":"确认"}</div>
 			</div>
 			{
 				frameFlag?(<div className="modal-content" >

@@ -4,8 +4,8 @@ import {
   NavLink 
 } from 'react-router-dom';
 import {Switch, Redirect} from 'react-router';
-import Main from'./index/main';
-import Mine from './index/mine';
+import Assets from'./main/assets';
+import Mine from './main/mine';
 interface IProps {
  match?:any,
  location?:object,
@@ -16,6 +16,9 @@ class Index extends React.Component<IProps, {}> {
   public state = {
 		count:1
 	};
+	public componentDidMount(){
+		
+	}
   public render(){
 	 const {match, location} = this.props;
 	 return(
@@ -23,10 +26,15 @@ class Index extends React.Component<IProps, {}> {
 		首页
 		<NavLink  to={`${match.url}/main`}>资产</NavLink >
 		<NavLink  to={`${match.url}/mine`}>我的</NavLink >
+		<input type='text' placeholder='请输入' onChange={(e)=>{
+			let reg:any = new RegExp(e.target.value,'gi');
+			let a:string = '上海交通大学Shanghai Jiao Tong University';
+			 console.log(reg.test(a));
+		}} />
 		<Switch location={location}>
 			 <Route       path={`${match.url}/mine`} component={Mine} />
-			 <Route       path={`${match.url}/main`}  component={Main} />
-			 <Route render={() => <Redirect to={`${match.url}/main`} />} />
+			 <Route       path={`${match.url}/assets`}  component={Assets} />
+			 <Route render={() => <Redirect to={`${match.url}/assets`} />} />
 		</Switch>
 		</div>
 	 )

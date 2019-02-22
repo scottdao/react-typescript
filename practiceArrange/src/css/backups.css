@@ -29,7 +29,7 @@
 	width: 13.125rem;
 	height: 3.125rem;
 	border-radius: 0.5rem;
-	background-color: rgb(18,169,237);
+	background-color: rgba(18,169,237,1);
 	color: #FFFFFF;
 	text-align: center;
 	line-height: 3.125rem;
@@ -37,6 +37,7 @@
 }
 div.confirm-btn{
 	margin: calc(20rem/2/14) auto 0;
+	background-color: rgba(18,169,237,0.4);
 }
 .chance-words-list{
 	width: calc(100% - 68px);

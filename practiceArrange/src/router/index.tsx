@@ -6,7 +6,7 @@ import Backups from '@/ts/ts-formal/backups'
 import * as React from "react";
 import { Route } from 'react-router-dom';
 import {Switch} from 'react-router';
-import Index from '@/ts/ts-formal';
+import Main from '@/ts/ts-formal/main';
 
 
 class RouterIndex extends React.Component<{}, {}> {
@@ -17,7 +17,7 @@ class RouterIndex extends React.Component<{}, {}> {
 				<Route  path="/leadTip"  component={LeadTip}/>
 				<Route  path="/setPassword"  component={SetPassword}/>
 				<Route  path="/backups"  component={Backups}/>
-				<Route  path="/index"  component={props=> <Index {...props} />}/>
+				<Route  path="/main"  component={props=> <Main {...props} />}/>
 				<Route  path='/detail' component={Detail} />
 				<Route       component={() => <div>404</div>} />
 			</Switch>
