@@ -46,11 +46,7 @@ class Index extends React.Component<IProps, {}> {
 					</li>
 				</NavLink>
 			</ul>
-		{/*<input type='text' placeholder='请输入' onChange={(e)=>{
-			let reg:any = new RegExp(e.target.value,'gi');
-			let a:string = '上海交通大学Shanghai Jiao Tong University';
-			 console.log(reg.test(a));
-		}} />*/}
+		
 		<Switch location={location}>
 			 <Route  exact     path={`${match.url}/mine`} component={Mine} />
 			 <Route   exact    path={`${match.url}/quotation`}  component={Quotation} />
