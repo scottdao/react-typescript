@@ -21,6 +21,7 @@ class Index extends React.Component<IProps, {}> {
 	}
   public render(){
 	 const {match, location} = this.props;
+	 let newArray:any = [{englishName:"Shanghai Jiao Tong University", chineseName:'上海交通大学'},{englishName:"", chineseName:'上海交通大学医学部'},{englishName:"", chineseName:'华中科技大学'}]
 	 return(
 		<div>
 		首页
@@ -28,8 +29,12 @@ class Index extends React.Component<IProps, {}> {
 		<NavLink  to={`${match.url}/mine`}>我的</NavLink >
 		<input type='text' placeholder='请输入' onChange={(e)=>{
 			let reg:any = new RegExp(e.target.value,'gi');
-			let a:string = '上海交通大学Shanghai Jiao Tong University';
-			 console.log(reg.test(a));
+			//let a:string = '上海交通大学Shanghai Jiao Tong University';
+			let arr:any = newArray.filter((res)=>{
+				//console.log(reg.test(res.chineseName+''+res.englishName));
+				return reg.test(res.chineseName+''+res.englishName);
+			})
+			 console.log(arr);
 		}} />
 		<Switch location={location}>
 			 <Route       path={`${match.url}/mine`} component={Mine} />
