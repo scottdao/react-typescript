@@ -1,0 +1,35 @@
+.main-index{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.main-nav{
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    width: 100%;
+    padding: 2% 5%;
+    box-sizing: border-box;
+}
+.activeName {
+    color: rgb(18,169,235);
+}
+.activeName p{
+    color: rgb(18,169,235);
+}
+.main-nav::before{
+    content: "";
+    position: absolute;
+    /* display:inline-block; */
+    height: 1px;
+    background: rgba(117, 117, 117, 0.2);
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.main-nav li{
+    text-align: center;
+    font-size:1rem;
+    color: rgba(117, 117, 117, 1);
+}

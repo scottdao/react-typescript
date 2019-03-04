@@ -1,14 +1,12 @@
 import * as React from "react";
-import {
-  NavLink 
-} from 'react-router-dom';
-class Mine extends React.Component<{},{}> {
+
+class Quotation extends React.Component<{},{}> {
     
   public state = {
 		count:1
 	};
 	public componentDidMount(){
-		document.title= '我的';
+		document.title= '行情';
 	}
 	public componentWillUnmount(){
 		document.title = '';
@@ -17,11 +15,10 @@ class Mine extends React.Component<{},{}> {
 		
 	 return(
 		<div>
-			我的界面
-			<NavLink to="/detail">进入详情页</NavLink>
+			行情界面
 		</div>
 	 )
  }
 }
 
-export default Mine;
+export default Quotation;

@@ -6,39 +6,53 @@ import {
 import {Switch, Redirect} from 'react-router';
 import Assets from'./main/assets';
 import Mine from './main/mine';
+import Quotation from './main/quotation';
+import '@/css/main.css';
 interface IProps {
  match?:any,
  location?:object,
  history?:any
 }
 class Index extends React.Component<IProps, {}> {
-    
-  public state = {
-		count:1
-	};
-	public componentDidMount(){
-		
-	}
+
+	
   public render(){
 	 const {match, location} = this.props;
-	 let newArray:any = [{englishName:"Shanghai Jiao Tong University", chineseName:'上海交通大学'},{englishName:"", chineseName:'上海交通大学医学部'},{englishName:"", chineseName:'华中科技大学'}]
+	 // let newArray:any = [{englishName:"Shanghai Jiao Tong University", chineseName:'上海交通大学'},{englishName:"", chineseName:'上海交通大学医学部'},{englishName:"", chineseName:'华中科技大学'}]
 	 return(
-		<div>
-		首页
-		<NavLink  to={`${match.url}/main`}>资产</NavLink >
-		<NavLink  to={`${match.url}/mine`}>我的</NavLink >
-		<input type='text' placeholder='请输入' onChange={(e)=>{
-			let reg:any = new RegExp(e.target.value,'gi');
-			//let a:string = '上海交通大学Shanghai Jiao Tong University';
-			let arr:any = newArray.filter((res)=>{
-				//console.log(reg.test(res.chineseName+''+res.englishName));
-				return reg.test(res.chineseName+''+res.englishName);
-			})
-			 console.log(arr);
-		}} />
+
+		<div className="main-index">
+			<ul className='main-nav'>
+				<NavLink  to={`${match.url}/assets`} activeClassName="activeName">
+					<li>
+						<p>
+						<span className="iconfont">&#xe605;</span>
+						</p>
+						<p>资产</p>
+					</li>
+				</NavLink >
+				<NavLink  to={`${match.url}/quotation`}activeClassName="activeName" >
+				<li>
+				<p>
+						<span className="iconfont">&#xe632;</span>
+						</p>
+						<p>行情</p>
+					</li>
+				</NavLink>
+				<NavLink  to={`${match.url}/mine`} activeClassName="activeName">
+					<li>	
+						<p>
+						<span className="iconfont">&#xe618;</span>
+						</p>
+						<p>我的</p>
+					</li>
+				</NavLink>
+			</ul>
+
 		<Switch location={location}>
-			 <Route       path={`${match.url}/mine`} component={Mine} />
-			 <Route       path={`${match.url}/assets`}  component={Assets} />
+			 <Route  exact     path={`${match.url}/mine`} component={Mine} />
+			 <Route   exact    path={`${match.url}/quotation`}  component={Quotation} />
+			 <Route   exact    path={`${match.url}/assets`}  component={Assets} />
 			 <Route render={() => <Redirect to={`${match.url}/assets`} />} />
 		</Switch>
 		</div>
