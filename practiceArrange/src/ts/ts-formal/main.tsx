@@ -20,6 +20,7 @@ class Index extends React.Component<IProps, {}> {
 	 const {match, location} = this.props;
 	 //console.log(this.props);
 	 return(
+
 		<div className="main-index">
 			<ul className='main-nav'>
 				<NavLink  to={`${match.url}/assets`} activeClassName="activeName">
@@ -47,7 +48,7 @@ class Index extends React.Component<IProps, {}> {
 					</li>
 				</NavLink>
 			</ul>
-		
+
 		<Switch location={location}>
 			 <Route  exact     path={`${match.url}/mine`} component={Mine} />
 			 <Route   exact    path={`${match.url}/quotation`}  component={Quotation} />
