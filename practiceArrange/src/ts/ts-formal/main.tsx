@@ -18,6 +18,7 @@ class Index extends React.Component<IProps, {}> {
 	
   public render(){
 	 const {match, location} = this.props;
+	 //console.log(this.props);
 	 return(
 		<div className="main-index">
 			<ul className='main-nav'>

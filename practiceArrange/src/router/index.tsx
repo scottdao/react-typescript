@@ -5,24 +5,46 @@ import SetPassword from '@/ts/ts-formal/setPassword'
 import Backups from '@/ts/ts-formal/backups'
 import * as React from "react";
 import { Route } from 'react-router-dom';
-import {Switch} from 'react-router';
+import { Switch, Redirect } from 'react-router';
 import Main from '@/ts/ts-formal/main';
 
+interface IState {
+	routerPower: object
+};
+class RouterIndex extends React.Component<{}, IState> {
+	public state = {
+		routerPower: [{ url: '/main', limitURL: "/backups", components: (props) => <Main {...props} /> }, { url: '/detail', limitURL: "/backups", components: (props) => <Detail {...props} /> }]
+	};
+	public routerManagent = (logPower: string): any => {
+		const { routerPower } = this.state;
+		return (<Switch >
+			{
+				routerPower && routerPower.map((item, index) => {
 
-class RouterIndex extends React.Component<{}, {}> {
-  public render(){
-	 return(
+					return <Route key={index} path={`${item.url}`} component={(props) => logPower == "liudaoyun" ? <item.components {...props} /> : <Redirect to={`${item.limitURL}`} />} />
+
+
+				})
+			}
+			<Route component={() => <div>404</div>} />
+		</Switch>);
+	}
+	public render() {
+		//登录权限变量
+		const loginPower: string = 'liudaoyun';
+		return (
 			<Switch >
-			  <Route  exact={true} path="/" component={LeadIndex}/>
-				<Route  path="/leadTip"  component={LeadTip}/>
-				<Route  path="/setPassword"  component={SetPassword}/>
-				<Route  path="/backups"  component={Backups}/>
-				<Route  path="/main"  component={props=> <Main {...props} />}/>
-				<Route  path='/detail' component={Detail} />
-				<Route       component={() => <div>404</div>} />
+				<Route exact={true} path="/" component={LeadIndex} />
+				<Route path="/leadTip" component={LeadTip} />
+				<Route path="/setPassword" component={SetPassword} />
+				<Route path="/backups" component={Backups} />
+				{this.routerManagent(loginPower)}
+				{/* <Route  path="/main"  component={(props)=>loginPower=="liudaoyun"?<Main {...props} />:<Redirect to='/backups' />}/>
+				<Route  path='/detail' component={Detail} /> */}
+
 			</Switch>
-	 )
- }
+		)
+	}
 }
 
 export default RouterIndex;
