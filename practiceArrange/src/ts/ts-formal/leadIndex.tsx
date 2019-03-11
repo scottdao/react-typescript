@@ -10,7 +10,11 @@ interface IProps {
  store?:any,
  actions?:any
 }
-@inject('store', 'actions')
+@inject((stores:any)=>{
+	return{
+		...stores.rootStore,
+	}
+})
 @observer
 class Login extends React.Component<IProps,{}> {
     
@@ -26,7 +30,7 @@ class Login extends React.Component<IProps,{}> {
 	}
   public render(){
 //const { store, actions } = this.props;
-//console.log(this.props);
+console.log(this.props);
 	 return(
 		<div className="leadIndex">
 		

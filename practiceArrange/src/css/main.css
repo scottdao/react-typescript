@@ -11,6 +11,7 @@
     width: 100%;
     padding: 2% 5%;
     box-sizing: border-box;
+	background-color: #fff;
 }
 .activeName {
     color: rgb(18,169,235);
@@ -32,4 +33,44 @@
     text-align: center;
     font-size:1rem;
     color: rgba(117, 117, 117, 1);
+}
+/* 行情界面 */
+.quotation-cotain-all{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(244,244,244);
+}
+.quotation-cotain-all ul{
+	padding-top: calc(10rem/14);
+	width: 100%;
+	overflow: scroll;
+	box-sizing: border-box;
+	height: 100%;
+}
+.quotation-list{
+	height:calc(80rem/14);
+	width: 100%;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	display: flex;
+	justify-content: space-between;
+	padding: 3% 5%;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 1rem;
+}
+.confirm-tag{
+	min-width: calc(152rem/2/14);
+	height: calc(52rem/2/14);
+	background-color: rgba(33,33,33,0.5);
+	border-radius: calc(4rem/14);
+	text-align: center;
+	color: #FFFFFF;
+	line-height: calc(52rem/2/14);
+}
+.confirm-tag a{
+	color: #FFFFFF;
+}
+.quotation-ta{
+	margin-top: 4%;
 }

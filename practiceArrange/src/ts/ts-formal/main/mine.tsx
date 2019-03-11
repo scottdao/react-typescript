@@ -1,7 +1,7 @@
 import * as React from "react";
-import {
-  NavLink 
-} from 'react-router-dom';
+// import {
+//   NavLink 
+// } from 'react-router-dom';
 class Mine extends React.Component<{},{}> {
     
   public state = {
@@ -18,7 +18,8 @@ class Mine extends React.Component<{},{}> {
 	 return(
 		<div>
 			我的界面
-			<NavLink to="/detail">进入详情页</NavLink>
+			{//<NavLink to="/detail">进入详情页</NavLink>
+			}
 		</div>
 	 )
  }

@@ -3,7 +3,7 @@ import Router from './router';
 import {
   HashRouter,
 } from 'react-router-dom'
-import {actions, store} from './ts/mobx/store';
+import {actionsRoot} from './ts/mobx/store';
 
 import { Provider } from 'mobx-react';
 
@@ -20,7 +20,7 @@ class App extends React.Component<{}, {}> {
 	}
   public render(){
 	return(
-	 <Provider store={store} actions={actions}>
+	 <Provider rootStore={actionsRoot}>
 		<HashRouter>
 			<Router />
 		</HashRouter>
