@@ -19,7 +19,7 @@ class Index extends React.Component<IProps, {}> {
 	
   public render(){
 	 const {match, location} = this.props;
-	 // let newArray:any = [{englishName:"Shanghai Jiao Tong University", chineseName:'上海交通大学'},{englishName:"", chineseName:'上海交通大学医学部'},{englishName:"", chineseName:'华中科技大学'}]
+	 //console.log(this.props);
 	 return(
 
 		<div className="main-index">
