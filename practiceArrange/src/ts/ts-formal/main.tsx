@@ -8,6 +8,7 @@ import Assets from'./main/assets';
 import Mine from './main/mine';
 import Quotation from './main/quotation';
 import '@/css/main.css';
+
 interface IProps {
  match?:any,
  location?:object,
