@@ -14,7 +14,11 @@ class Main extends React.Component<{},{}> {
 		
 	 return(
 		<div>
-		主页界面
+			<header className="assets-all-head">
+				<div className="assets-head-qrIcon">
+				   <span className="iconfont icon-erweima"></span>
+				</div>
+			</header>
 		</div>
 	 )
  }
