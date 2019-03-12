@@ -5,15 +5,29 @@ interface IProps {
  match?:any,
  location?:object,
  history?:any,
- store?:any,
- actions?:any
+ clickFrame:any,
+ clickNext:any,
+ frameFlag:boolean,
+ helpWordFlag:boolean,
+ firstFrame:any,
+ noClickNext:any
 }
 interface IState {
 	hlepList:object,
 	playList:object,
 	activeIndexArr:object
 }
-@inject('store', 'actions')
+@inject((stores:any)=>{
+	// console.log(stores);
+	return{
+		clickFrame:stores.rootStore.actions.clickFrame,
+		clickNext:stores.rootStore.actions.clickNext,
+		frameFlag:stores.rootStore.store.frameFlag,
+		helpWordFlag:stores.rootStore.store.helpWordFlag,
+		firstFrame:stores.rootStore.actions.firstFrame,
+		noClickNext:stores.rootStore.actions.noClickNext
+	}
+})
 @observer
 class Backups extends React.Component<IProps,IState> {
 	public state={
@@ -23,23 +37,51 @@ class Backups extends React.Component<IProps,IState> {
 	}
   public componentDidMount(){
  	document.title = '冷钱包-备份助记词';
-	this.props.actions.firstFrame();
-	this.props.actions.noClickNext();
+	this.props.firstFrame();
+	this.props.noClickNext();
 	//权限控制，登录确认账号，无法后退；
  }
  public componentWillUnmount(){
  	document.title = '';
  }
+ nextStepClick = (helpWordFlag, clickNext):any=>{
+		const {playList} = this.state;
+		if(helpWordFlag){
+			this.setState({
+			hlepList:['eggA', 'eggB', 'eggC', 'eggD','eggE', 'eggF', 'eggG', 'eggH','eggJ', 'eggK', 'eggL', 'eggM'],
+			playList:[]
+		})
+		clickNext();
+		}else{//进入一下页
+			playList.length===12?this.props.history.push('/main'):'';
+		}
+	}
+chanceWordsClick = (index, res):any=>{
+		const {activeIndexArr, playList, hlepList} = this.state;
+		if(activeIndexArr[index]===index){delete activeIndexArr[index];}
+		else activeIndexArr[index]=index
+		hlepList.filter((r, i)=>{
+			if(playList.length<12){
+				   activeIndexArr[index] === i?playList.push(r):"";
+			}
+		})
+		//按index无法有效删除，操作的顺序会变化，需通过值来删除。
+		playList.map((e,n)=>{
+			if(activeIndexArr[index]===undefined)if(res===e)playList.splice(n,1);
+		});
+		this.setState({
+			activeIndexArr,
+			playList
+		})
+}
   public render(){
-		const {actions:{
+		const {
 			clickFrame:clickFrame,
-			clickNext:clickNext
-		},
-		store:{
+			clickNext:clickNext,
 			frameFlag:frameFlag,
 			helpWordFlag:helpWordFlag
-		}
 		} = this.props;
+
 		let {hlepList, playList, activeIndexArr} = this.state
 	 return(
 		<div className="backups-total">
@@ -61,40 +103,13 @@ class Backups extends React.Component<IProps,IState> {
 					<ul className='words-sort'>
 						{
 							hlepList && hlepList.map((res,index)=>{
-								return(<li key={index} onClick={(e)=>{
-										if(activeIndexArr[index]===index){delete activeIndexArr[index];}
-										else activeIndexArr[index]=index
-										hlepList.filter((r, i)=>{
-											if(playList.length<12){
-												   activeIndexArr[index] === i?playList.push(r):"";
-											}
-										})
-										//按index无法有效删除，操作的顺序会变化，需通过值来删除。
-										playList.map((e,n)=>{
-											if(activeIndexArr[index]===undefined)if(res===e)playList.splice(n,1);
-										});
-									this.setState({
-										activeIndexArr,
-										playList
-									})
-								}} className={activeIndexArr[index]===index?"listActive":""}>{res}</li>)
+								return(<li key={index} onClick={this.chanceWordsClick.bind(this,index,res)} className={activeIndexArr[index]===index?"listActive":""}>{res}</li>)
 							})
 						}
 					</ul>
 				</div>):""}
 				
-				<div className={helpWordFlag?"reword-btn ":'reword-btn confirm-btn'} onClick={()=>{
-					if(helpWordFlag){
-						this.setState({
-						hlepList:['eggA', 'eggB', 'eggC', 'eggD','eggE', 'eggF', 'eggG', 'eggH','eggJ', 'eggK', 'eggL', 'eggM'],
-						playList:[]
-					})
-					clickNext();
-					
-					}else{//进入一下页
-						playList.length===12?this.props.history.push('/main'):'';
-					}
-				}} style={{backgroundColor:playList.length===12?"rgba(18,169,237,1)":""}}>{helpWordFlag?"下一步":"确认"}</div>
+				<div className={helpWordFlag?"reword-btn ":'reword-btn confirm-btn'} onClick={this.nextStepClick.bind(this, helpWordFlag, clickNext)} style={{backgroundColor:playList.length===12?"rgba(18,169,237,1)":""}}>{helpWordFlag?"下一步":"确认"}</div>
 			</div>
 			{
 				frameFlag?(<div className="modal-content" >

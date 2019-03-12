@@ -28,6 +28,7 @@ class Actions{
   clickNext = () => {
     this.store.helpWordFlag = false;
   }
+  @action
   noClickNext = ()=>{
 	   this.store.helpWordFlag = true;
   }
