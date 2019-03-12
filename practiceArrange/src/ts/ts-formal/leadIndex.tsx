@@ -29,8 +29,8 @@ class Login extends React.Component<IProps,{}> {
 		document.title = '';
 	}
   public render(){
-//const { store, actions } = this.props;
-console.log(this.props);
+// const { store, actions } = this.props;
+// console.log(this.props);
 	 return(
 		<div className="leadIndex">
 		

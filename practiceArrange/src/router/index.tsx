@@ -22,8 +22,6 @@ class RouterIndex extends React.Component<{}, IState> {
 				routerPower && routerPower.map((item, index) => {
 
 					return <Route key={index} path={`${item.url}`} component={(props) => logPower == "liudaoyun" ? <item.components {...props} /> : <Redirect to={`${item.limitURL}`} />} />
-
-
 				})
 			}
 			<Route component={() => <div>404</div>} />

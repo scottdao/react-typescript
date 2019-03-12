@@ -69,10 +69,10 @@ chanceWordsClick = (index, res):any=>{
 		playList.map((e,n)=>{
 			if(activeIndexArr[index]===undefined)if(res===e)playList.splice(n,1);
 		});
-	this.setState({
-		activeIndexArr,
-		playList
-	})
+		this.setState({
+			activeIndexArr,
+			playList
+		})
 }
   public render(){
 		const {

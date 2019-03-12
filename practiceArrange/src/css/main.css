@@ -74,3 +74,92 @@
 .quotation-ta{
 	margin-top: 4%;
 }
+/* 我的界面 */
+.mine-contain{
+	height: 100%;
+	overflow: scroll;
+	width: 100%;
+	background-color: rgba(244,244,244);
+}
+.mine-head-content{
+	height: calc(200rem/14);
+	width: 100%;
+	background-color: rgba(18,169,237);
+	position: relative;
+	box-shadow: 0 0.125rem 0.3125rem #7DCDF3;
+}
+.mine-head-setting{
+	width:100%;
+	padding:1% 2% 0;
+	text-align: right;
+	box-sizing: border-box;
+}
+.mine-head-setting .icon-shezhi{
+	color: #FFFFFF;
+	font-size: calc(30rem/14);
+}
+.mine-head-avater{
+	/* margin-top: calc(8rem/14); */
+	margin: calc(8rem/14) auto 0;
+	width: 3.75rem;
+	height: 3.75rem;
+}
+.mine-nickname{
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 0.75rem;
+	margin-top: 0.5rem;
+}
+.mine-coin{
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 0.75rem;
+	margin-top: 0.75rem;
+}
+.mine-sec-order{
+	padding:  3% 0;
+	background-color: #FFFFFF;
+}
+.sec-order-head{
+	font-size: calc(16rem/14);
+	font-family: "microsoft yahei";
+	padding:0 3%;
+}
+.sec-order-inline{
+	display: block;
+	height: 1px;
+	width: 100%;
+	background-color: rgba(33,33,33,0.3);
+	margin-top: 3%;
+}
+
+/* todo
+.mine-head-content:after{
+	content: '';
+	height: calc(10rem/14);
+	width: calc(10rem/14);
+	position: absolute;
+	background-color: #7dcdf3;
+	border-radius: 50%;
+	bottom: 0;
+	left: 0;
+	animation: sportBall 2s ease-in-out 2s  infinite alternate;
+} 
+@keyframes sportBall{
+	0% {
+		bottom: 0;
+		left:0;
+	}
+	
+	50%{
+		bottom: 3.75rem;
+		left:50%;
+	}
+	
+	100%{
+		bottom:0;
+		left:  98%
+	}
+} */
+
+ 
