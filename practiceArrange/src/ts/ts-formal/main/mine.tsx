@@ -1,7 +1,4 @@
 import * as React from "react";
-// import {
-//   NavLink 
-// } from 'react-router-dom';
 class Mine extends React.Component<{},{}> {
     
   public state = {
@@ -36,7 +33,9 @@ class Mine extends React.Component<{},{}> {
 					<p className="sec-order-head">我的订单</p>
 					<p className="sec-order-inline"></p>
 					<div className="mine-sec-record">
-						
+						<div></div>
+						<p></p>
+						<div></div>
 					</div>
 				</div>
 				<div className="mine-sec-accout">

@@ -22,7 +22,6 @@
 .main-nav::before{
     content: "";
     position: absolute;
-    /* display:inline-block; */
     height: 1px;
     background: rgba(117, 117, 117, 0.2);
     width: 100%;
