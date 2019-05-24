@@ -20,7 +20,6 @@ class RouterIndex extends React.Component<{}, IState> {
 		return (<Switch >
 			{
 				routerPower && routerPower.map((item, index) => {
-
 					return <Route key={index} path={`${item.url}`} component={(props) => logPower == "liudaoyun" ? <item.components {...props} /> : <Redirect to={`${item.limitURL}`} />} />
 				})
 			}
@@ -30,6 +29,8 @@ class RouterIndex extends React.Component<{}, IState> {
 	public render() {
 		//登录权限变量
 		const loginPower: string = 'liudaoyun';
+		console.log(React);
+		//console.log(useState);
 		return (
 			<Switch >
 				<Route exact={true} path="/" component={LeadIndex} />
@@ -37,9 +38,7 @@ class RouterIndex extends React.Component<{}, IState> {
 				<Route path="/setPassword" component={SetPassword} />
 				<Route path="/backups" component={Backups} />
 				{this.routerManagent(loginPower)}
-				{/* <Route  path="/main"  component={(props)=>loginPower=="liudaoyun"?<Main {...props} />:<Redirect to='/backups' />}/>
-				<Route  path='/detail' component={Detail} /> */}
-
+				
 			</Switch>
 		)
 	}
