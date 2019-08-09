@@ -118,7 +118,7 @@ div.confirm-btn{
 .modal-btn{
 	height: calc(50rem/14);
 	width: 100%;
-	background-color: rgba(18,169,237);
+	background-color: rgba(18,169,237, 1);
 	color: #FFFFFF;text-align: center;
 	line-height: calc(50rem/14);
 	font-size: calc(20rem/14);

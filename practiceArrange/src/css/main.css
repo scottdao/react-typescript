@@ -58,7 +58,7 @@
 .quotation-cotain-all{
 	width: 100%;
 	height: 100%;
-	background-color: rgba(244,244,244);
+	background-color: rgba(244,244,244,1);
 }
 .quotation-cotain-all ul{
 	padding-top: calc(10rem/14);
@@ -99,12 +99,12 @@
 	height: 100%;
 	overflow: scroll;
 	width: 100%;
-	background-color: rgba(244,244,244);
+	background-color: rgba(244,244,244,1);
 }
 .mine-head-content{
 	height: calc(200rem/14);
 	width: 100%;
-	background-color: rgba(18,169,237);
+	background-color: rgba(18,169,237,1);
 	position: relative;
 	box-shadow: 0 0.125rem 0.3125rem #7DCDF3;
 }
