@@ -29,7 +29,7 @@ class RouterIndex extends React.Component<{}, IState> {
 	public render() {
 		//登录权限变量
 		const loginPower: string = 'liudaoyun';
-		console.log(React);
+		//console.log(React);
 		//console.log(useState);
 		return (
 			<Switch >
