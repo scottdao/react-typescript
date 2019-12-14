@@ -1,4 +1,6 @@
 @import url("iconFont/iconfont.css");
+
+
 ul,
 li,
 dl,
@@ -32,10 +34,10 @@ section,
 aside,
 menu,
 body,
-html{
+html {
 	margin: 0;
 	padding: 0;
-	
+
 }
 
 table {
@@ -57,7 +59,7 @@ a {
 }
 
 body {
-	font-size:1rem;
+	font-size: 1rem;
 	color: #666;
 	font-family: "microsoft yahei";
 	min-width: 320px;
@@ -93,13 +95,16 @@ input[type="reset"] {
 
 input[type="button"],
 input[type="checkbox"],
-input[type="radio"]{
+input[type="radio"] {
 	-webkit-appearance: none;
 	-webkit-appearance: checkbox
 }
-input[type="text"],input[type="password"] {
+
+input[type="text"],
+input[type="password"] {
 	-webkit-appearance: none;
 }
+
 ::-webkit-input-placeholder {
 	/* WebKit browsers */
 	color: #999;
@@ -148,11 +153,12 @@ input[type="text"],input[type="password"] {
 		font-size: 14px;
 	}
 }
+
 @media only screen and (min-width: 320px) and (max-width:374px) {
 	html {
 		font-size: 12px;
 	}
-	
+
 }
 
 /* 平板电脑布局:414px 至480px。样式继承自: 移动设备布局。 */
@@ -161,7 +167,7 @@ input[type="text"],input[type="password"] {
 	html {
 		font-size: 16px;
 	}
-	
+
 }
 
 
@@ -179,8 +185,9 @@ input[type="text"],input[type="password"] {
 		width: 640px;
 		margin: auto;
 	}
-	html{
+
+	html {
 		font-size: 38px;
 	}
-	
+
 }
