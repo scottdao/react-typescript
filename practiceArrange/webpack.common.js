@@ -58,9 +58,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       //引入成为全局模块
-      $$: "jquery",
-      jquery: "jquery",
-      "window.jquery": "jquery",
+      // $$: "jquery",
+      // jquery: "jquery",
+      // "window.jquery": "jquery",
       _: "lodash"
     }),
     new webpack.DefinePlugin({

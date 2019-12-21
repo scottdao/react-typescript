@@ -1,7 +1,8 @@
-.help-reword{
-		width: 100%;
-} 
-.reword-head{
+.help-reword {
+	width: 100%;
+}
+
+.reword-head {
 	color: #333333;
 	font-size: calc(32rem/2/14);
 	font-weight: 900;
@@ -9,37 +10,43 @@
 	font-family: "microsoft yahei";
 	margin-top: calc(52rem/14/2);
 }
-.reword-warning{
+
+.reword-warning {
 	width: 80%;
 	margin: calc(40rem/14/2) auto 0;
 	text-indent: calc(25rem/14);
 }
-.backups-total{
+
+.backups-total {
 	height: 100%;
 	overflow: scroll;
 }
-.reword-words{
+
+.reword-words {
 	width: calc(100% - 68px);
 	height: calc(310rem/2/14);
-	background-color: rgb(246,246,246);
+	background-color: rgb(246, 246, 246);
 	border-radius: calc(8rem/14);
 	margin: calc(120rem/2/14) auto 0;
 }
-.reword-btn{
+
+.reword-btn {
 	width: 13.125rem;
 	height: 3.125rem;
 	border-radius: 0.5rem;
-	background-color: rgba(18,169,237,1);
+	background-color: rgba(18, 169, 237, 1);
 	color: #FFFFFF;
 	text-align: center;
 	line-height: 3.125rem;
 	margin: calc(120rem/2/14) auto 0;
 }
-div.confirm-btn{
+
+div.confirm-btn {
 	margin: calc(20rem/2/14) auto 0;
-	background-color: rgba(18,169,237,0.4);
+	background-color: rgba(18, 169, 237, 0.4);
 }
-.chance-words-list{
+
+.chance-words-list {
 	width: calc(100% - 68px);
 	height: calc(310rem/2/14);
 	/* background-color: rgb(246,246,246); */
@@ -47,41 +54,42 @@ div.confirm-btn{
 	margin: 0 auto;
 }
 
-.words-sort{
-	
-}
-.words-sort li{
+.words-sort {}
+
+.words-sort li {
 	font-size: calc(1rem);
 	font-family: "microsoft yahei";
 	display: inline-block;
-	margin:  calc(20rem/2/14) 8%;
+	margin: calc(20rem/2/14) 8%;
 	width: calc(50rem/14);
 	text-align: center;
 }
-.listActive{
+
+.listActive {
 	background: orange;
 	color: #FFFFFF;
 	border-radius: calc(2rem/14);
-	
+
 }
 
 /* 弹框 */
-.modal-content{
+/* .modal-content{
 	position: relative;
 	width: 100%;
 	height: 100%;
-}
-.modal-content:after{
+} */
+.modal-content:after {
 	content: '';
 	display: block;
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background: rgba(33,33,33,0.2);
+	background: rgba(33, 33, 33, 0.2);
 	top: 0;
 	z-index: 100;
 }
-.modal-frame{
+
+.modal-frame {
 	position: fixed;
 	width: calc(100% - 80px);
 	height: calc(253rem/14);
@@ -94,34 +102,39 @@ div.confirm-btn{
 	z-index: 1000;
 	border-radius: calc(8rem/14);
 }
-.modal-head-img{
+
+.modal-head-img {
 	width: calc(30rem/14);
 	height: calc(30rem/14);
 	background: url(../imgs/icon_qwjp.png) no-repeat;
 	background-size: 100% 100%;
 	margin: calc(20rem/14) auto;
 }
-.modal-no-screenshot{
+
+.modal-no-screenshot {
 	font-size: calc(36rem/14/2);
 	font-family: "microsoft yahei";
-	color: rgba(33,33,33,1);
+	color: rgba(33, 33, 33, 1);
 	text-align: center;
 	margin-bottom: calc(12rem/14);
 }
-.modal-no-tip{
+
+.modal-no-tip {
 	width: 80%;
-	margin:calc(12rem/14) auto calc(24rem/14);
+	margin: calc(12rem/14) auto calc(24rem/14);
 	font-size: 1rem;
 	color: #333333;
 	line-height: calc(24rem/14);
 }
-.modal-btn{
+
+.modal-btn {
 	height: calc(50rem/14);
 	width: 100%;
-	background-color: rgba(18,169,237, 1);
-	color: #FFFFFF;text-align: center;
+	background-color: rgba(18, 169, 237, 1);
+	color: #FFFFFF;
+	text-align: center;
 	line-height: calc(50rem/14);
 	font-size: calc(20rem/14);
 	border-bottom-left-radius: calc(8rem/14);
-	border-bottom-right-radius:calc(8rem/14);
+	border-bottom-right-radius: calc(8rem/14);
 }

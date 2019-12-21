@@ -26,8 +26,8 @@ module.exports = merge(common, {
     hot: true,
     port: 8088,
     inline: true,
-    //host: '192.168.0.108',
-    host: "localhost",
+    host: "192.168.100.240",
+    // host: "127.0.0.1",
     historyApiFallback: true,
     noInfo: false,
     proxy: {
@@ -44,6 +44,6 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin() //不与--hot共用，预防热更新性能问题
   ]
 });

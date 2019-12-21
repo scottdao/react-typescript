@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-	  "module":"commonjs",
+    "module": "commonjs",
     //"baseUrl": ".",
     //"outDir": "build/dist",
     //"module": "esnext",
@@ -9,16 +9,16 @@
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
-   // "moduleResolution": "node",
+    // "moduleResolution": "node",
     //"rootDir": "src",
     //"forceConsistentCasingInFileNames": true,
     //"noImplicitReturns": true,
     //"noImplicitThis": true,
     "noImplicitAny": false, // 默认不带类型的就为 any
     //"strictNullChecks": false,
-   // "suppressImplicitAnyIndexErrors": true,
+    // "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-	"outDir":"dist",
+    // "outDir":"dist",
     "emitDecoratorMetadata": true, // 允许使用装饰器的相关功能
     "experimentalDecorators": true, // 同上
     // "paths": {
@@ -34,7 +34,7 @@
     //"webpack",
     //"jest",
     "src/setupTests.ts",
-		"src/App.test.tsx"//去除app.test.tsx
+    "src/App.test.tsx" //去除app.test.tsx
   ],
   "rules": {
     "ordered-imports": false,
