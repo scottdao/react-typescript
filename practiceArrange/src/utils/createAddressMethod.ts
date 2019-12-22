@@ -1,15 +1,18 @@
 import * as bip39 from "bip39";
 import changeNet from "./changeNet";
 import * as bitCoin from "bitcoinjs-lib";
-import hdKey from "ethereumjs-wallet/hdkey";
+import * as hdKey from "ethereumjs-wallet/hdkey";
+
+const mnemonic = bip39.generateMnemonic(); // 助记词
 
 const commonMethod = () => {
-  const mnemonic = bip39.generateMnemonic();
   const seed = bip39.mnemonicToSeed(mnemonic);
   const hdWallet = hdKey.fromMasterSeed(seed); //生成钱包，钱包存在公私钥
+  // console.log(mnemonic);
   return hdWallet;
 };
 const Net = bitCoin.networks[changeNet.coinNet].pubKeyHash;
+// console.log( bitCoin.networks, Net, changeNet.coinNet)
 export const btcFn = () => {
   // btc 地址
   const keyBtc = commonMethod().derivePath(changeNet.btcNetProtocol);
@@ -18,5 +21,7 @@ export const btcFn = () => {
     bitCoin.crypto.hash160(publicKey),
     Net
   );
+
   return addressBtc;
 };
+export { mnemonic };

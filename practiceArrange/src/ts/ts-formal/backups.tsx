@@ -1,8 +1,9 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
 import { useEffect } from "react";
+// import styled from 'styled-components';
 import "@/css/backups.css";
-// console.log(React, useEffect, "助记词");
+
 
 const Backups = ({
   helpWordFlag,
@@ -11,10 +12,10 @@ const Backups = ({
   frameFlag,
   saveBtcDataFn
 }: any) => {
-  const playList: any = [];
-  const hlepList: any = [];
+  const playList: any = [...saveBtcData];
+  const hlepList: any = [...saveBtcData];
   useEffect(() => {
-    // saveDataFn(["a", "b"]);
+    saveBtcDataFn();
   }, []);
   console.log([...saveBtcData]);
   return (
@@ -77,7 +78,7 @@ const Backups = ({
             <div
               className="modal-btn"
               onClick={() => {
-                console.log(1111);
+                // console.log(1111);
                 clickFrame();
               }}
             >

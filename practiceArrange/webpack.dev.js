@@ -26,7 +26,8 @@ module.exports = merge(common, {
     hot: true,
     port: 8088,
     inline: true,
-    host: "192.168.100.240",
+    host: "192.168.0.102",
+
     // host: "127.0.0.1",
     historyApiFallback: true,
     noInfo: false,

@@ -1,5 +1,5 @@
 import { action, observable } from "mobx";
-import { btcFn } from "../../../utils/createAddressMethod";
+import { mnemonic } from "../../../utils/createAddressMethod";
 
 class SaveDataStore {
   @observable saveBtcData = [];
@@ -12,7 +12,7 @@ class SaveDataActions {
 
   @action
   saveBtcDataFn = () => {
-    this.store.saveBtcData = btcFn();
+    this.store.saveBtcData = mnemonic.split(" ");
   };
 }
 const saveDataStore = new SaveDataStore();
