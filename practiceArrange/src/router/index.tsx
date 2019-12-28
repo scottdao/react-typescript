@@ -2,7 +2,7 @@ import { Component } from "react";
 import * as React from "react";
 import { Route } from "react-router-dom";
 import { Switch, Redirect } from "react-router";
-import Detail from "../ts/ts-formal/detail";
+import Detail from "../ts/ts-formal/Detail";
 import LeadIndex from "../ts/ts-formal/leadIndex";
 import LeadTip from "../ts/ts-formal/leadTip";
 import SetPassword from "../ts/ts-formal/setPassword";

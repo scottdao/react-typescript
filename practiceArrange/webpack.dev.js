@@ -4,6 +4,8 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const common = require("./webpack.common.js");
 const path = require("path");
+
+const devApi = require("./dev.js");
 module.exports = merge(common, {
   devtool: "inline-source-map",
   output: {
@@ -24,10 +26,10 @@ module.exports = merge(common, {
   devServer: {
     contentBase: "./dist",
     hot: true,
-    port: 8088,
+    port: 8082,
     inline: true,
-    host: "192.168.0.102",
-
+    //  host: "192.168.0.102",
+    host: devApi.devHost,
     // host: "127.0.0.1",
     historyApiFallback: true,
     noInfo: false,

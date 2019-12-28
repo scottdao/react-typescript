@@ -19,7 +19,7 @@ module.exports = {
       Component: path.resolve(__dirname, "src/component/"), //代替模块路径
       Style: path.resolve(__dirname, "src/style/"),
       Router: path.resolve(__dirname, "src/router/"),
-
+      Ts: path.resolve(__dirname, "src/ts/"),
       Image: path.resolve(__dirname, "src/image/"),
       "@": path.resolve(__dirname, "src/")
     }

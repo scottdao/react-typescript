@@ -1,25 +1,36 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
-import { useEffect } from "react";
-// import styled from 'styled-components';
+import { useEffect, useState, useMemo } from "react";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+import styled from "styled-components";
 import "@/css/backups.css";
 
+const BackupsContent = styled.div``;
 
 const Backups = ({
   helpWordFlag,
   saveBtcData,
   clickFrame,
   frameFlag,
-  saveBtcDataFn
+  saveBtcDataFn,
+  clickNext
 }: any) => {
-  const playList: any = [...saveBtcData];
-  const hlepList: any = [...saveBtcData];
+  const [playList, setPlayList] = useState([]);
+  const [hlepList, setHlepList] = useState([]);
+  const [activeIndexArr, setActiveIndexArr] = useState(new Array(12).fill(""));
+  // const playList: any = ;
+  // const hlepList: any = [...saveBtcData];
   useEffect(() => {
     saveBtcDataFn();
   }, []);
-  console.log([...saveBtcData]);
+  useMemo(() => {
+    setPlayList(saveBtcData);
+    setHlepList(saveBtcData);
+  }, [saveBtcData]);
+  useDocumentTitle("助记词");
+
   return (
-    <div className="backups-total">
+    <BackupsContent className="backups-total">
       <div className="restore-account">恢复账号</div>
       <div className="help-reword">
         <header className="reword-head">请抄写你的助记词</header>
@@ -42,10 +53,16 @@ const Backups = ({
                   return (
                     <li
                       key={index}
-                      // onClick={this.chanceWordsClick.bind(this, index, res)}
-                      // className={
-                      //   activeIndexArr[index] === index ? "listActive" : ""
-                      // }
+                      onClick={(e: any) => {
+                        activeIndexArr.splice(index, 1, res);
+                        setActiveIndexArr(activeIndexArr);
+                        // const lis: any = e.target;
+
+                        setPlayList([`e.target`]);
+                      }}
+                      className={
+                        activeIndexArr[index] == res ? "listActive" : ""
+                      }
                     >
                       {res}
                     </li>
@@ -59,7 +76,12 @@ const Backups = ({
 
         <div
           className={helpWordFlag ? "reword-btn " : "reword-btn confirm-btn"}
-          // onClick={this.nextStepClick.bind(this, helpWordFlag, clickNext)}
+          onClick={() => {
+            if (helpWordFlag) {
+              clickNext();
+              setPlayList([]);
+            }
+          }}
           style={{
             backgroundColor: playList.length === 12 ? "rgba(18,169,237,1)" : ""
           }}
@@ -89,7 +111,7 @@ const Backups = ({
       ) : (
         ""
       )}
-    </div>
+    </BackupsContent>
   );
 };
 export default inject(({ actions, store, saveDataAction, saveDataStore }) => {

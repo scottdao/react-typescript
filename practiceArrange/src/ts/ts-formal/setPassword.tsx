@@ -2,8 +2,10 @@ import * as React from "react";
 import "@/css/set-password.css";
 // import { Link } from "react-router-dom";
 import { Button, InputItem, List, Toast } from "antd-mobile";
+import { useEffect } from "react";
 import { createForm } from "rc-form";
 import { handleErrorCheck } from "../../utils/handleMethods";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 // console.log(handleErrorCheck);
 // const Item = List.Item;
 
@@ -11,6 +13,8 @@ const SetPassword = ({ form, location, history }): any => {
   // console.log(_);
   // console.log(form);
   const { getFieldDecorator } = form;
+  useEffect(() => {}, []);
+  useDocumentTitle("设置密码");
   return (
     <div className="set-password">
       <p className="set-head" style={{ marginBottom: "10px" }}>

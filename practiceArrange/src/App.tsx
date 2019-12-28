@@ -13,7 +13,7 @@ class App extends React.Component<{}, {}> {
     root.style.height = h + "px";
   };
   public componentDidMount() {
-    // document.title = '冷钱包-首页';
+    // document.title = "冷钱包-首页";
     this.getHeight();
   }
   public render() {
