@@ -20,7 +20,7 @@
     "bs58check": "^2.1.2",
     "buffer": "^5.4.3",
     "ethereumjs-wallet": "^0.6.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mobx": "^5.15.1",
     "mobx-react": "^6.1.4",
     "rc-form": "^2.4.11",
